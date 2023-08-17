@@ -55,6 +55,7 @@ async function onClick(event) {
     let result = await makeRequest(url, body, method);
     let result_html = document.getElementById('result')
     result_html.innerText = result.answer
+    result_html.className = ""
 
 }
 
