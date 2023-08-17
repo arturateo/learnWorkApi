@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Детальный просмотр{% endblock %}
+{% block content %}
+    <div class="mt-3">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Первое число</span>
+            <input type="number" class="form-control" id="number_1" placeholder="Первое число" aria-label="number_1"
+                   aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Второе число</span>
+            <input type="text" class="form-control" id="number_2" placeholder="Второе число" aria-label="number_2"
+                   aria-describedby="basic-addon1">
+        </div>
+        <div class="btn-group">
+            <button type="submit" data-url="{% url 'api_v1:add' %}" data-method="POST"
+                    class="btn calculating btn-primary">Сложение
+            </button>
+            <button type="submit" data-url="{% url 'api_v1:subtract' %}" data-method="POST"
+                    class="btn calculating btn-info">Вычитание
+            </button>
+            <button type="submit" data-url="{% url 'api_v1:multiply' %}" data-method="POST"
+                    class="btn calculating btn-success">Умножение
+            </button>
+            <button type="submit" data-url="{% url 'api_v1:divide' %}" data-method="POST"
+                    class="btn calculating btn-dark">Деление
+            </button>
+            <span class="btn calculating btn-dark">Результат: <span id="result"></span></span>
+        </div>
+    </div>
+{% endblock %}
